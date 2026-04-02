@@ -1,18 +1,18 @@
 :root {
-  --bg: #f5efe8;
-  --surface: rgba(255, 255, 255, 0.8);
+  --bg: #f8f8fb;
+  --surface: rgba(255, 255, 255, 0.92);
   --surface-strong: #ffffff;
-  --surface-soft: #eef4ff;
-  --surface-warm: #fff0e8;
-  --text: #17233f;
-  --muted: #5f6b85;
-  --primary: #155dfc;
-  --primary-dark: #102a83;
-  --accent: #ff7a59;
-  --accent-dark: #a8462e;
-  --border: rgba(23, 35, 63, 0.1);
-  --shadow-lg: 0 24px 80px rgba(21, 46, 130, 0.16);
-  --shadow-md: 0 16px 40px rgba(21, 46, 130, 0.12);
+  --surface-soft: #f3f6ff;
+  --surface-warm: #fff4f5;
+  --text: #25263a;
+  --muted: #646b84;
+  --primary: #eb2027;
+  --primary-dark: #b0111c;
+  --accent: #2344b7;
+  --accent-dark: #182b78;
+  --border: rgba(37, 38, 58, 0.09);
+  --shadow-lg: 0 24px 80px rgba(176, 17, 28, 0.12);
+  --shadow-md: 0 16px 40px rgba(35, 68, 183, 0.1);
   --radius-xl: 34px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -34,9 +34,9 @@ body {
   font-family: 'Manrope', sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(21, 93, 252, 0.12), transparent 28%),
-    radial-gradient(circle at right center, rgba(255, 122, 89, 0.12), transparent 24%),
-    linear-gradient(180deg, #f7f1ea 0%, #eef4ff 100%);
+    radial-gradient(circle at top left, rgba(235, 32, 39, 0.08), transparent 26%),
+    radial-gradient(circle at right center, rgba(35, 68, 183, 0.08), transparent 22%),
+    linear-gradient(180deg, #ffffff 0%, #f6f7fc 100%);
 }
 
 a {
@@ -63,7 +63,7 @@ img {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: rgba(247, 241, 234, 0.78);
+  background: rgba(255, 255, 255, 0.84);
   border-bottom: 1px solid rgba(23, 35, 63, 0.08);
 }
 
@@ -82,18 +82,21 @@ img {
 }
 
 .brand__logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(21, 46, 130, 0.18);
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(37, 38, 58, 0.12);
   flex-shrink: 0;
 }
 
 .brand strong,
 .footer strong {
   display: block;
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.08rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 0.95;
 }
 
 .brand span,
@@ -101,6 +104,14 @@ img {
 .footer__meta span {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.brand span {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 800;
 }
 
 .nav {
@@ -147,9 +158,9 @@ img {
 }
 
 .button--secondary {
-  color: var(--primary-dark);
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .button--light {
@@ -168,8 +179,8 @@ img {
   height: 640px;
   border-radius: 38px;
   background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.14), transparent 24%),
-    linear-gradient(135deg, rgba(21, 93, 252, 0.96), rgba(16, 42, 131, 0.92));
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 24%),
+    linear-gradient(135deg, rgba(235, 32, 39, 0.96), rgba(176, 17, 28, 0.92));
   box-shadow: var(--shadow-lg);
 }
 
@@ -195,7 +206,7 @@ img {
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--accent);
+  color: #ffd6d8;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.82rem;
@@ -207,7 +218,7 @@ img {
 }
 
 .eyebrow--teal {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .hero h1,
@@ -292,7 +303,7 @@ img {
 
 .hero-card {
   padding: 24px;
-  background: rgba(255, 244, 238, 0.97);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .hero-card h2 {
@@ -326,7 +337,7 @@ img {
 
 .hero-card__panel span,
 .section-kicker {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .hero-card__panel strong {
@@ -338,11 +349,11 @@ img {
 }
 
 .section--soft {
-  background: linear-gradient(180deg, transparent, rgba(238, 244, 255, 0.88));
+  background: linear-gradient(180deg, transparent, rgba(243, 246, 255, 0.95));
 }
 
 .section--accent {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
 }
 
 .section-head {
@@ -406,7 +417,7 @@ img {
 
 .about-card--feature {
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(237, 247, 244, 0.78));
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 244, 245, 0.88));
 }
 
 .about-card h3,
@@ -449,7 +460,7 @@ img {
 }
 
 .card-tag {
-  color: var(--accent-dark);
+  color: var(--primary-dark);
 }
 
 .doctor-card {
@@ -463,7 +474,7 @@ img {
   height: 68px;
   margin: 0 auto 18px;
   border-radius: 24px;
-  background: linear-gradient(135deg, var(--accent), var(--primary));
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
   font-family: 'Outfit', sans-serif;
   font-size: 1.65rem;
@@ -472,7 +483,7 @@ img {
 
 .doctor-card__role {
   margin: 12px 0 6px;
-  color: var(--primary);
+  color: var(--accent);
   font-weight: 800;
 }
 
@@ -498,7 +509,7 @@ img {
 }
 
 .showcase-card--warm {
-  background: linear-gradient(145deg, rgba(255, 240, 232, 0.98), rgba(238, 244, 255, 0.92));
+  background: linear-gradient(145deg, rgba(255, 244, 245, 0.98), rgba(243, 246, 255, 0.94));
 }
 
 .stack-list,
@@ -618,8 +629,8 @@ img {
   }
 
   .brand__logo {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
   }
 
   .hero__gradient {

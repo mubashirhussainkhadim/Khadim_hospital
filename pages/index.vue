@@ -124,10 +124,10 @@ useSeoMeta({
     <header class="topbar">
       <div class="container topbar__inner">
         <div class="brand">
-          <img class="brand__logo" src="/logo-khadim.svg" alt="Khadim Hospital logo" />
+          <img class="brand__logo" src="/khadim-logo.jpg" alt="Khadim Hospital logo" />
           <div>
             <strong>Khadim Hospital</strong>
-            <span>Kot Radha Kishan, Kasur</span>
+            <span>A family hospital</span>
           </div>
         </div>
 
@@ -148,7 +148,7 @@ useSeoMeta({
         <div class="hero__gradient"></div>
         <div class="container hero__layout">
           <div class="hero__content">
-            <p class="eyebrow">Best Hospital in Kot Radha Kishan</p>
+            <p class="eyebrow">A Family Hospital</p>
             <h1>Trusted care for Kot Radha Kishan.</h1>
             <p class="hero__text">
               24/7 emergency, women\'s health, surgery, and everyday care in one trusted hospital.

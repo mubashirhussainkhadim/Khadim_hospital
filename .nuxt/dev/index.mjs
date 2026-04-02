@@ -2034,7 +2034,7 @@ const _18qGn_v4KkgtbWX3ELrVRPB2In4xqIB905CQW_XQgvo = (function(nitro) {
 
 const rootDir = "/Users/mubashirhussain/Documents/Khadim_hospital";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"theme-color","content":"#0f766e"}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"viewport":"width=device-width, initial-scale=1"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"theme-color","content":"#0f766e"}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"viewport":"width=device-width, initial-scale=1"};
 
 const appRootTag = "div";
 
