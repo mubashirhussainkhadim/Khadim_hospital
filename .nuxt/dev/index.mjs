@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, getResponseStatusText } from 'file:///Users/mubashirhussain/Documents/Khadim_hospital/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, setHeader, getResponseStatusText } from 'file:///Users/mubashirhussain/Documents/Khadim_hospital/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
@@ -2034,7 +2034,7 @@ const _18qGn_v4KkgtbWX3ELrVRPB2In4xqIB905CQW_XQgvo = (function(nitro) {
 
 const rootDir = "/Users/mubashirhussain/Documents/Khadim_hospital";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"theme-color","content":"#0f766e"}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"viewport":"width=device-width, initial-scale=1"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"theme-color","content":"#eb2027"}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"viewport":"width=device-width, initial-scale=1"};
 
 const appRootTag = "div";
 
@@ -2596,10 +2596,14 @@ async function getIslandContext(event) {
 	};
 }
 
+const _lazy_tWSrZy = () => Promise.resolve().then(function () { return robots_txt$1; });
+const _lazy_y3v1Cg = () => Promise.resolve().then(function () { return sitemap_xml$1; });
 const _lazy_kpaOJB = () => Promise.resolve().then(function () { return renderer; });
 
 const handlers = [
   { route: '', handler: _oRglNr, lazy: false, middleware: true, method: undefined },
+  { route: '/robots.txt', handler: _lazy_tWSrZy, lazy: true, middleware: false, method: undefined },
+  { route: '/sitemap.xml', handler: _lazy_y3v1Cg, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_kpaOJB, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_kpaOJB, lazy: true, middleware: false, method: undefined }
@@ -2940,6 +2944,53 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const robots_txt = defineEventHandler((event) => {
+  const origin = getRequestURL(event).origin;
+  const body = [
+    "User-agent: *",
+    "Allow: /",
+    "",
+    `Sitemap: ${origin}/sitemap.xml`
+  ].join("\n");
+  setHeader(event, "content-type", "text/plain; charset=utf-8");
+  return body;
+});
+
+const robots_txt$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: robots_txt
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const sitemap_xml = defineEventHandler((event) => {
+  const origin = getRequestURL(event).origin;
+  const updatedAt = (/* @__PURE__ */ new Date()).toISOString();
+  const urls = [
+    {
+      loc: `${origin}/`,
+      changefreq: "weekly",
+      priority: "1.0"
+    }
+  ];
+  const body = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(
+    (url) => `  <url>
+    <loc>${url.loc}</loc>
+    <lastmod>${updatedAt}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`
+  ).join("\n")}
+</urlset>`;
+  setHeader(event, "content-type", "application/xml; charset=utf-8");
+  return body;
+});
+
+const sitemap_xml$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: sitemap_xml
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

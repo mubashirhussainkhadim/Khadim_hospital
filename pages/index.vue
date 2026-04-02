@@ -1,4 +1,34 @@
 <script setup lang="ts">
+const route = useRoute()
+const requestUrl = useRequestURL()
+const canonicalUrl = new URL(route.path || '/', requestUrl.origin).toString()
+const mapEmbedUrl =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.6269495261295!2d74.1064406!3d31.175625500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39184f4af37a242b%3A0x19e7dad0b98f2fc4!2skhadim%20hospital!5e0!3m2!1sen!2s!4v1775146841125!5m2!1sen!2s'
+const whatsappUrl = 'https://wa.me/923084876102'
+
+const connectLinks = [
+  {
+    label: 'WhatsApp',
+    value: 'Chat on WhatsApp',
+    href: whatsappUrl
+  },
+  {
+    label: 'Call',
+    value: '0308 4876102',
+    href: 'tel:+923084876102'
+  },
+  {
+    label: 'Email',
+    value: 'info@khadimhospital.com',
+    href: 'mailto:info@khadimhospital.com'
+  },
+  {
+    label: 'Directions',
+    value: 'Open in Google Maps',
+    href: 'https://maps.google.com/?q=Chungi%20No%206%2C%20Muhallah%20Farooqia%2C%20Kot%20Radha%20Kishan%2C%20Kasur%2C%20Punjab%2C%20Pakistan'
+  }
+]
+
 const stats = [
   { value: '24/7', label: 'Emergency support' },
   { value: '50+', label: 'Bed capacity' },
@@ -107,15 +137,157 @@ const faqs = [
   }
 ]
 
+const seoFaqs = faqs.map((faq) => ({
+  '@type': 'Question',
+  name: faq.question,
+  acceptedAnswer: {
+    '@type': 'Answer',
+    text: faq.answer
+  }
+}))
+
 useSeoMeta({
   title: 'Khadim Hospital | Best Hospital in Kot Radha Kishan',
   description:
-    'Khadim Hospital website presenting the hospital as a leading healthcare destination in Kot Radha Kishan with departments, doctors, emergency care, and contact details.',
+    'Khadim Hospital in Kot Radha Kishan offers emergency care, gynecology, general surgery, pharmacy support, and family-focused treatment in Kasur, Punjab.',
   ogTitle: 'Khadim Hospital | Best Hospital in Kot Radha Kishan',
   ogDescription:
-    'Explore departments, doctor information, emergency support, and contact details for Khadim Hospital in Kot Radha Kishan.',
+    'Explore departments, doctor information, emergency support, contact details, and location for Khadim Hospital in Kot Radha Kishan.',
   ogType: 'website',
-  twitterCard: 'summary_large_image'
+  ogLocale: 'en_PK',
+  ogImage: '/khadim-logo.jpg',
+  twitterCard: 'summary_large_image',
+  twitterImage: '/khadim-logo.jpg',
+  keywords:
+    'Khadim Hospital, Khadim Hospital Kot Radha Kishan, hospital in Kot Radha Kishan, best hospital in Kot Radha Kishan, gynecology in Kot Radha Kishan, general surgery in Kot Radha Kishan, emergency hospital Kasur'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en-PK'
+  },
+  link: [
+    {
+      rel: 'canonical',
+      href: canonicalUrl
+    }
+  ],
+  meta: [
+    {
+      name: 'robots',
+      content: 'index, follow, max-image-preview:large'
+    },
+    {
+      name: 'author',
+      content: 'Khadim Hospital'
+    },
+    {
+      name: 'format-detection',
+      content: 'telephone=yes'
+    },
+    {
+      name: 'application-name',
+      content: 'Khadim Hospital'
+    },
+    {
+      name: 'geo.region',
+      content: 'PK-PB'
+    },
+    {
+      name: 'geo.placename',
+      content: 'Kot Radha Kishan, Kasur, Punjab, Pakistan'
+    },
+    {
+      name: 'ICBM',
+      content: '31.1725, 74.0997'
+    },
+    {
+      property: 'business:contact_data:street_address',
+      content: 'Chungi No. 6, Muhallah Farooqia'
+    },
+    {
+      property: 'business:contact_data:locality',
+      content: 'Kot Radha Kishan'
+    },
+    {
+      property: 'business:contact_data:region',
+      content: 'Punjab'
+    },
+    {
+      property: 'business:contact_data:country_name',
+      content: 'Pakistan'
+    }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Hospital',
+            '@id': `${canonicalUrl}#hospital`,
+            name: 'Khadim Hospital',
+            description:
+              'Family hospital in Kot Radha Kishan providing emergency care, gynecology, general surgery, and pharmacy support.',
+            image: `${requestUrl.origin}/khadim-logo.jpg`,
+            telephone: '+92 308 4876102',
+            email: 'info@khadimhospital.com',
+            url: canonicalUrl,
+            logo: `${requestUrl.origin}/khadim-logo.jpg`,
+            sameAs: [whatsappUrl],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Chungi No. 6, Muhallah Farooqia',
+              addressLocality: 'Kot Radha Kishan',
+              addressRegion: 'Punjab',
+              addressCountry: 'PK'
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: 31.1756255,
+              longitude: 74.1064406
+            },
+            areaServed: ['Kot Radha Kishan', 'Kasur'],
+            medicalSpecialty: ['Gynecologic', 'Surgical'],
+            openingHours: 'Mo-Su 00:00-23:59',
+            hasMap:
+              'https://www.google.com/maps/place/khadim+hospital/@31.1756255,74.1064406,15z/data=!4m6!3m5!1s0x39184f4af37a242b:0x19e7dad0b98f2fc4!8m2!3d31.1756255!4d74.1064406!16s%2Fg%2F11vz6y30m6'
+          },
+          {
+            '@type': 'WebSite',
+            '@id': `${canonicalUrl}#website`,
+            url: canonicalUrl,
+            name: 'Khadim Hospital',
+            inLanguage: 'en-PK'
+          },
+          {
+            '@type': 'BreadcrumbList',
+            '@id': `${canonicalUrl}#breadcrumb`,
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: canonicalUrl
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Khadim Hospital Kot Radha Kishan',
+                item: canonicalUrl
+              }
+            ]
+          },
+          {
+            '@type': 'FAQPage',
+            '@id': `${canonicalUrl}#faq`,
+            mainEntity: seoFaqs
+          }
+        ]
+      })
+    }
+  ]
 })
 </script>
 
@@ -300,6 +472,37 @@ useSeoMeta({
       </section>
 
       <section id="contact" class="section contact-section">
+        <div class="container section-head">
+          <p class="eyebrow">Find Khadim Hospital</p>
+          <h2>Hospital location in Kot Radha Kishan.</h2>
+          <p>
+            Patients looking for a hospital in Kot Radha Kishan can quickly locate
+            Khadim Hospital near Chungi No. 6, Muhallah Farooqia, with direct phone access
+            for emergency and routine care.
+          </p>
+        </div>
+
+        <div class="container map-wrap">
+          <iframe
+            class="map-frame"
+            :src="mapEmbedUrl"
+            title="Khadim Hospital map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="container social-wrap">
+          <article
+            v-for="item in connectLinks"
+            :key="item.label"
+            class="social-card"
+          >
+            <span>{{ item.label }}</span>
+            <a :href="item.href" target="_blank" rel="noopener noreferrer">{{ item.value }}</a>
+          </article>
+        </div>
+
         <div class="container contact-panel">
           <div class="contact-panel__content">
             <p class="eyebrow eyebrow--light">Contact Khadim Hospital</p>
@@ -308,10 +511,15 @@ useSeoMeta({
               Address shown on this project: Chungi No. 6, Muhallah Farooqia,
               Kot Radha Kishan, Kasur, Punjab, Pakistan.
             </p>
+            <p>
+              Important local details: 24/7 availability, emergency support, women\'s health,
+              general surgery, and family-focused treatment for Kot Radha Kishan and nearby areas.
+            </p>
           </div>
 
           <div class="contact-panel__details">
             <a href="tel:+923084876102">0308 4876102</a>
+            <a href="mailto:info@khadimhospital.com">info@khadimhospital.com</a>
             <span>Open 24 Hours</span>
             <span>Kot Radha Kishan, Kasur</span>
             <a class="button button--light button--full" href="tel:+923084876102">Call For Appointment</a>
