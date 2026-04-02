@@ -108,12 +108,12 @@ const faqs = [
 ]
 
 useSeoMeta({
-  title: 'Khadim Hospital | Professional Healthcare Website',
+  title: 'Khadim Hospital | Best Hospital in Kot Radha Kishan',
   description:
-    'Professional Nuxt website for Khadim Hospital in Kot Radha Kishan featuring departments, doctors, emergency care, contact details, and patient-focused presentation.',
-  ogTitle: 'Khadim Hospital | Kot Radha Kishan',
+    'Khadim Hospital website presenting the hospital as a leading healthcare destination in Kot Radha Kishan with departments, doctors, emergency care, and contact details.',
+  ogTitle: 'Khadim Hospital | Best Hospital in Kot Radha Kishan',
   ogDescription:
-    'Explore departments, doctor information, contact details, and emergency care for Khadim Hospital in Kot Radha Kishan.',
+    'Explore departments, doctor information, emergency support, and contact details for Khadim Hospital in Kot Radha Kishan.',
   ogType: 'website',
   twitterCard: 'summary_large_image'
 })
@@ -124,7 +124,7 @@ useSeoMeta({
     <header class="topbar">
       <div class="container topbar__inner">
         <div class="brand">
-          <span class="brand__mark">KH</span>
+          <img class="brand__logo" src="/logo-khadim.svg" alt="Khadim Hospital logo" />
           <div>
             <strong>Khadim Hospital</strong>
             <span>Kot Radha Kishan, Kasur</span>
@@ -148,12 +148,10 @@ useSeoMeta({
         <div class="hero__gradient"></div>
         <div class="container hero__layout">
           <div class="hero__content">
-            <p class="eyebrow">Professional Hospital Website</p>
-            <h1>Compassionate care, modern presentation, and local trust for Kot Radha Kishan.</h1>
+            <p class="eyebrow">Best Hospital in Kot Radha Kishan</p>
+            <h1>Trusted care for Kot Radha Kishan.</h1>
             <p class="hero__text">
-              Khadim Hospital is presented as a reliable healthcare destination for
-              families who need emergency support, women\'s health services, surgery,
-              and everyday medical guidance in one accessible local facility.
+              24/7 emergency, women\'s health, surgery, and everyday care in one trusted hospital.
             </p>
 
             <div class="hero__actions">
@@ -170,11 +168,10 @@ useSeoMeta({
           </div>
 
           <aside class="hero-card">
-            <p class="eyebrow eyebrow--teal">Available Now</p>
-            <h2>Built to inspire confidence before a patient even arrives.</h2>
+            <p class="eyebrow eyebrow--teal">Top-Rated Care Identity</p>
+            <h2>The hospital families trust first.</h2>
             <p>
-              This upgraded homepage introduces a stronger hospital identity, complete
-              sections, clearer trust signals, and a more professional healthcare tone.
+              Clear information, fast contact, and a strong local care message.
             </p>
 
             <div class="hero-card__panel">
@@ -198,22 +195,22 @@ useSeoMeta({
       <section id="about" class="section">
         <div class="container section-head">
           <p class="eyebrow">About The Hospital</p>
-          <h2>A more complete digital identity for a community-centered hospital.</h2>
+          <h2>Presented as the best hospital experience in Kot Radha Kishan.</h2>
           <p>
             Kot Radha Kishan is a tehsil of Kasur district in Punjab, and this website
-            is designed to help Khadim Hospital look dependable, accessible, and
-            professionally organized for local residents and visiting families.
+            is designed to help Khadim Hospital stand out as the area's most dependable,
+            accessible, and professionally presented healthcare destination.
           </p>
         </div>
 
         <div class="container about-grid">
           <article class="about-card about-card--feature">
             <span class="section-kicker">Hospital Promise</span>
-            <h3>Care that feels local, clear, and reassuring.</h3>
+            <h3>Care that feels advanced, reliable, and community trusted.</h3>
             <p>
-              The design focuses on trust, speed, and readability. Patients can identify
-              services, contact the hospital, and understand its strengths without
-              confusion or clutter.
+              The design focuses on authority, clarity, and ease of access. Patients can
+              quickly understand why Khadim Hospital should feel like the first choice
+              for treatment in Kot Radha Kishan.
             </p>
           </article>
 
@@ -229,7 +226,7 @@ useSeoMeta({
       <section id="departments" class="section section--soft">
         <div class="container section-head">
           <p class="eyebrow">Departments</p>
-          <h2>Key medical services presented with clarity.</h2>
+          <h2>Leading services for families across Kot Radha Kishan.</h2>
         </div>
 
         <div class="container card-grid">
@@ -244,7 +241,7 @@ useSeoMeta({
       <section id="doctors" class="section">
         <div class="container section-head">
           <p class="eyebrow">Medical Team</p>
-          <h2>Doctor highlights for stronger patient trust.</h2>
+          <h2>Doctor highlights that reinforce hospital excellence.</h2>
           <p>
             These doctor entries are based on the public hospital listing used for
             this project and can be replaced with official hospital-approved profiles later.
@@ -264,7 +261,7 @@ useSeoMeta({
       <section id="process" class="section section--accent">
         <div class="container section-head section-head--light">
           <p class="eyebrow eyebrow--light">Patient Journey</p>
-          <h2>Simple treatment flow patients can understand quickly.</h2>
+          <h2>A smooth treatment journey from first contact to follow-up care.</h2>
         </div>
 
         <div class="container process-grid">
@@ -280,7 +277,7 @@ useSeoMeta({
         <div class="container split-grid">
           <article class="showcase-card">
             <p class="eyebrow">Hospital Strengths</p>
-            <h2>Designed to feel established, not temporary.</h2>
+            <h2>Designed to look like the strongest hospital brand in town.</h2>
             <div class="stack-list">
               <article v-for="item in features" :key="item.title" class="stack-item">
                 <h3>{{ item.title }}</h3>
@@ -306,7 +303,7 @@ useSeoMeta({
         <div class="container contact-panel">
           <div class="contact-panel__content">
             <p class="eyebrow eyebrow--light">Contact Khadim Hospital</p>
-            <h2>Visit, call, or use this website as the base for a full hospital platform.</h2>
+            <h2>Choose Khadim Hospital for confident, local, round-the-clock care.</h2>
             <p>
               Address shown on this project: Chungi No. 6, Muhallah Farooqia,
               Kot Radha Kishan, Kasur, Punjab, Pakistan.
@@ -327,7 +324,7 @@ useSeoMeta({
       <div class="container footer__inner">
         <div>
           <strong>Khadim Hospital</strong>
-          <p>Professional Nuxt hospital website for Kot Radha Kishan.</p>
+          <p>Best hospital website presentation for Kot Radha Kishan.</p>
         </div>
         <div class="footer__meta">
           <span>Address: Chungi No. 6, Muhallah Farooqia</span>

@@ -1,0 +1,12 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="khadimGradient" x1="35" y1="32" x2="178" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7A59"/>
+      <stop offset="1" stop-color="#155DFC"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="184" height="184" rx="54" fill="url(#khadimGradient)"/>
+  <path d="M109.5 156L66 112.946C54.2391 101.368 54.2391 82.5928 66 71.0149C77.7609 59.437 96.8261 59.437 108.587 71.0149L110 72.4068L111.413 71.0149C123.174 59.437 142.239 59.437 154 71.0149C165.761 82.5928 165.761 101.368 154 112.946L141.042 125.768" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M136 150H174" stroke="white" stroke-width="12" stroke-linecap="round"/>
+  <path d="M155 131V169" stroke="white" stroke-width="12" stroke-linecap="round"/>
+</svg>
