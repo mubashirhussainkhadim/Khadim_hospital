@@ -28,3 +28,11 @@ npm run dev
 ```
 
 Then open the local Nuxt URL shown in your terminal.
+
+## Google Search Console
+
+The site includes this verification meta tag in the global head:
+
+```html
+<meta name="google-site-verification" content="y1LaqUgDWLIyMtlMOJaQCPbvShhf81OsxTBB8m2E7mQ">
+```

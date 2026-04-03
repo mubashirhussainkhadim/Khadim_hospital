@@ -12,6 +12,10 @@ export default defineNuxtConfig({
         {
           name: 'theme-color',
           content: '#eb2027'
+        },
+        {
+          name: 'google-site-verification',
+          content: 'y1LaqUgDWLIyMtlMOJaQCPbvShhf81OsxTBB8m2E7mQ'
         }
       ],
       link: [
